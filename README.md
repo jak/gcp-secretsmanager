@@ -5,7 +5,6 @@ from a [Berglas](https://github.com/GoogleCloudPlatform/berglas)-style format to
 
 ## Table of Contents
 - [Installation](#installation)
-- [Usage](#usage)
 - [API](#api)
 - [Examples](#examples)
 - [Contributing](#contributing)
@@ -41,11 +40,11 @@ Converts all process.env variables from their `sm://` format to the actual secre
 ### retrieveSecret
 
 ```typescript
-const secretsManager = require('@jakspalding/gcp-secretsmanager');
+import { retrieveSecret } from '@jakspalding/gcp-secretsmanager';
 
 async function printSecret() {
   const secret = 'sm://google-project-name/secret-name'; // you could use process.env here
-  const value = await secretsManager.getSecret<string>(secret);
+  const value = await retrieveSecret<string>(secret);
   console.log(secret);
 }
 
