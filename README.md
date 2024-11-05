@@ -44,7 +44,7 @@ import { retrieveSecret } from '@jakspalding/gcp-secretsmanager';
 
 async function printSecret() {
   const secret = 'sm://google-project-name/secret-name'; // you could use process.env here
-  const value = await secretsManager.retrieveSecret<string>(secret);
+  const value = await retrieveSecret<string>(secret);
   console.log(secret);
 }
 
