@@ -1,7 +1,7 @@
-import resolveProcessEnv from "./resolveProcessEnv";
-import retrieveSecret from "./retrieveSecret";
+import { resolveProcessEnv } from "./resolveProcessEnv";
+import { retrieveSecret } from "./retrieveSecret";
 
-export default {
+export {
   retrieveSecret,
   resolveProcessEnv
 }

@@ -9,7 +9,7 @@ function referenceToName(reference: SecretReference): string {
   return `projects/${project}/secrets/${name}/versions/${version}`;
 }
 
-export default async function accessSecret<T extends string | Uint8Array>(
+export async function accessSecret<T extends string | Uint8Array>(
   reference: SecretReference,
 ): Promise<T> {
   const client = new SecretManagerServiceClient();

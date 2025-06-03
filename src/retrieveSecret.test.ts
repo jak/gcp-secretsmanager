@@ -18,7 +18,7 @@ describe("retrieveSecret", () => {
   });
 
   it("should fetch the latest secret from GCP Secret Manager by default", async () => {
-    const { default: retrieveSecret } = await import("./retrieveSecret");
+    const { retrieveSecret } = await import("./retrieveSecret");
     const expectedSecret = "test-secret";
     accessSecretVersionMock.mockResolvedValue([
       { payload: { data: expectedSecret } },
@@ -34,7 +34,7 @@ describe("retrieveSecret", () => {
   });
 
   it("should fetch the specified version secret from GCP Secret Manager when provided", async () => {
-    const { default: retrieveSecret } = await import("./retrieveSecret");
+    const { retrieveSecret } = await import("./retrieveSecret");
     const expectedSecret = "test-secret";
     accessSecretVersionMock.mockResolvedValue([
       { payload: { data: expectedSecret } },

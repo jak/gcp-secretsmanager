@@ -21,7 +21,7 @@ describe("resolveProcessEnv", () => {
     vi.stubEnv("NOT_A_SECRET", "sm-not-a-secret");
     vi.stubEnv("A_SECRET", "sm://env-test-project/env-test-secret-name");
 
-    const { default: resolveProcessEnv } = await import("./resolveProcessEnv");
+    const { resolveProcessEnv } = await import("./resolveProcessEnv");
     const expectedSecret = "resolved-secret";
     accessSecretVersionMock.mockResolvedValue([
       { payload: { data: expectedSecret } },

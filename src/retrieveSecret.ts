@@ -1,5 +1,5 @@
-import accessSecret from "./lib/accessSecret";
-import parseSecretManagerUri from "./lib/parseSecretManagerUri";
+import { accessSecret } from "./lib/accessSecret";
+import { parseSecretManagerUri } from "./lib/parseSecretManagerUri";
 
 /**
  * Fetch a Secret from Google Secrets Manager.
@@ -12,7 +12,7 @@ import parseSecretManagerUri from "./lib/parseSecretManagerUri";
  *
  * @param uri
  */
-export default async function retrieveSecret<T extends string | Uint8Array>(
+export async function retrieveSecret<T extends string | Uint8Array>(
   uri: string,
 ): Promise<T> {
   const secretReference = parseSecretManagerUri(uri);

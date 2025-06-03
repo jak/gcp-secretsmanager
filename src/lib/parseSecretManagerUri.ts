@@ -1,6 +1,6 @@
 import { SecretReference } from "./types";
 
-export default function parseSecretManagerUri(uri: string): SecretReference {
+export function parseSecretManagerUri(uri: string): SecretReference {
   const u = new URL(uri);
   const project = u.host;
   const name = u.pathname.replace(/^\//, "");
