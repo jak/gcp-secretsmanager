@@ -27,7 +27,7 @@ You will need `roles/secretmanager.secretAccessor` role to access secrets.
 - `uri` (string): A URI following Berglas format, e.g. sm://project/name or sm://project/name#version
 
 #### Returns
-A string or binary data (Uint8Array). If you know the type, and you are using Typescript, you can provide it
+A string or binary data (Uint8Array). If you know the type, and you are using TypeScript, you can provide it
 e.g. `retrieveSecret<string>('sm://my-google-project/mysql-password')`
 
 
